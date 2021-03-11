@@ -41,4 +41,63 @@ function start() {
             "EXIT"
         ]
     })
+    .then(function (answer) {
+        switch (answer.action) {
+            case "View All Employees":
+                view.viewAllEmployees(connection, start);
+                break;
+
+            case "View All Employees by Department":
+                view.viewEmployeeDept(connection, start);
+                break;
+
+            case "View All Employees by Manager":
+                view.viewEmployeeMgr(connection, start);
+                break;
+
+            case "Add Employee":
+                add.addEmployee(connection, start);
+                break;
+
+            case "Update Employee Role":
+                update.updateRole(connection, start);
+                break;
+
+            case "Update Employee Manager":
+                update.updateManager(connection, start);
+                break;
+
+            case "Remove Employee":
+                remove.removeEmployee(connection, start);
+                break;
+
+            case "View All Roles":
+                view.viewRoles(connection, start);
+                break;
+
+            case "Add Role":
+                add.addRole(connection, start);
+                break;
+
+            case "Remove Role":
+                remove.removeRole(connection, start);
+                break;
+
+            case "View All Departments":
+                view.viewDepartments(connection, start);
+                break;
+
+            case "Add Department":
+                add.addDepartment(connection, start);
+                break;
+
+            case "Remove Department":
+                update.removeDepartment(connection, start);
+                break;
+
+            case "EXIT":
+                connection.end();
+                break;
+        }
+    })
 }
