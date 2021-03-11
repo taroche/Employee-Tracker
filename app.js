@@ -92,7 +92,7 @@ function start() {
                 break;
 
             case "Remove Department":
-                update.removeDepartment(connection, start);
+                remove.removeDepartment(connection, start);
                 break;
 
             case "EXIT":
