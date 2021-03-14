@@ -35,7 +35,20 @@ const view = {
         })
     },
 
-    viewEmployeeMgr() {
+    viewEmployeeMgr(connection, init) {
+        let queryString = `
+        SELECT employee.id, first_name, last_name, manager_id
+        FROM employee
+        LEFT JOIN employee
+        ON manager_id = manager_id;`
+
+        connection.query(queryString, (err, data) => {
+            if (err) throw err;
+            console.log("\n")
+            console.table(data)
+            console.log("\n")
+            init()
+        })
     },
 
     viewRoles(connection, init) {
