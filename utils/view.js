@@ -36,14 +36,24 @@ const view = {
     },
 
     viewEmployeeMgr() {
-
     },
 
     viewRoles() {
 
     },
 
-    viewDepartments() {
+    viewDepartments(connection, init) {
+        let queryString = `
+        SELECT *
+        FROM department`
+
+        connection.query(queryString, (err, data) => {
+            if (err) throw err;
+            console.log("\n")
+            console.table(data)
+            console.log("\n")
+            init()
+        })
 
     }
 }
