@@ -1,14 +1,13 @@
 const inquirer = require("inquirer");
 
-function updateRole(){
+const update = {
+    updateRole() {
 
+    },
+
+    updateManager() {
+
+    }
 }
 
-function updateManager(){
-
-}
-
-module.exports = {
-    updateRole: updateRole,
-    updateManager: updateManager
-}
+module.exports = update
