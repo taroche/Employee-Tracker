@@ -1,19 +1,16 @@
 const inquirer = require("inquirer");
 
-function removeEmployee() {
+const remove = {
+    removeEmployee() {
 
+    },
+
+    removeRole() {
+
+    },
+
+    removeDepartment() {
+
+    }
 }
-
-function removeRole() {
-
-}
-
-function removeDepartment(){
-
-}
-
-module.exports = {
-    removeEmployee: removeEmployee,
-    removeRole: removeRole,
-    removeDepartment: removeDepartment
-}
+module.exports = remove
