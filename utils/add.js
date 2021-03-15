@@ -1,19 +1,17 @@
 const inquirer = require("inquirer");
 
-function addEmployee(){
+const add = {
 
+    addEmployee(connection, init){
+
+    },
+
+    addRole(connection, init){
+        
+    },
+    
+    addDepartment(connection, init){
+    } 
 }
 
-function addRole(){
-
-}
-
-function addDepartment(){
-
-}
-
-module.exports = {
-    addEmployee: addEmployee,
-    addRole: addRole,
-    addDepartment: addDepartment
-};
+module.exports = add
