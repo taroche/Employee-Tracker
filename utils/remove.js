@@ -23,7 +23,9 @@ const remove = {
                     let query = 'DELETE FROM employee WHERE first_name = ?;'
                     connection.query(query, answer.removeEmployee, function (err, res) {
                         if (err) throw err;
+                        console.log("\n");
                         console.log("Employee successfully deleted");
+                        console.log("\n");
                         init();
                     });
                 });
@@ -52,7 +54,9 @@ const remove = {
                     let query = 'DELETE FROM role WHERE title = ?;'
                     connection.query(query, answer.removeRole, function (err, res) {
                         if (err) throw err;
+                        console.log("\n");
                         console.log("Role successfully deleted");
+                        console.log("\n");
                         init();
                     });
                 });
@@ -81,7 +85,9 @@ const remove = {
                     let query = 'DELETE FROM department WHERE name = ?;'
                     connection.query(query, answer.removeDept, function (err, res) {
                         if (err) throw err;
+                        console.log("\n");
                         console.log("Department successfully deleted");
+                        console.log("\n");
                         init();
                     });
                 });
