@@ -16,8 +16,8 @@ SELECT * FROM department;
 
 INSERT INTO role (title, salary, department_id)
 VALUES 
-("Assistant to the Regional Manager", 90000.00, 1),
-("Regional Manager", 180000.00, 1),
+("Manager", 90000.00, 1),
+("CEO", 180000.00, 1),
 ("Accountant", 70000.00, 2),
 ("HR Associate", 90000.00, 3),
 ("Software Engineer", 175000.00, 4),
@@ -29,3 +29,23 @@ VALUES
 ("TEST", 10.00, 9);
 
 SELECT * FROM role;
+
+INSERT INTO employee (first_name, last_name, role_id)
+VALUES 
+("Jane", "Smith", 2);
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES 
+("John", "Time", 1, 1),
+("Alise", "Date", 3, 1),
+("Rain", "Weather", 4, 2),
+("Tim", "Rock", 5, 2),
+("Helper", "Fun", 6, 1),
+("Talker", "Sales", 7, 2),
+("Phone", "Thing", 8, 7),
+("Tristan", "LaRoche", 9, 2),
+("Molly", "Delan", 10, 2),
+("TEst", "TEst", 11, 1)
+
+
+SELECT * FROM employee;
