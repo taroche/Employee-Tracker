@@ -6,7 +6,7 @@ const add = {
 
     addEmployee(connection, init){
         let newEmployee = {};
-        connection.query("SELECT * FROM role", function (err, results) {
+        connection.query("SELECT * FROM roles", function (err, results) {
             if (err) throw err;
             inquirer
                 .prompt([
@@ -50,7 +50,7 @@ const add = {
                     newEmployee.first_name = answer.first_name;
                     newEmployee.last_name = answer.last_name;
     
-                    connection.query("SELECT * FROM role WHERE title = ?", answer.role, function (err, results) {
+                    connection.query("SELECT * FROM roles WHERE title = ?", answer.role, function (err, results) {
                         if (err) throw err;
     
                         newEmployee.role_id = results[0].id;

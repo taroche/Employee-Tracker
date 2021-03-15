@@ -55,7 +55,7 @@ const view = {
                 ])
                 .then(function (answer) {
                     console.log(answer.manager);
-                    let query = 'SELECT employee.id, employee.first_name, employee.last_name, role.title, role.salary, department.name AS department, e2.first_name AS manager FROM employee LEFT JOIN employee AS e2 ON e2.id = employee.manager_id JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id WHERE e2.first_name = ? ORDER BY employee.id;'
+                    let query = 'SELECT employee.id, employee.first_name, employee.last_name, roles.title, roles.salary, department.dept_name AS department, e2.first_name AS manager FROM employee LEFT JOIN employee AS e2 ON e2.id = employee.manager_id JOIN roles ON employee.role_id = roles.id JOIN department ON roles.department_id = department.id WHERE e2.first_name = ? ORDER BY employee.id;'
                     connection.query(query, answer.manager, function (err, data) {
                         if (err) throw err;
                         console.log("\n");

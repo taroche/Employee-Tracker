@@ -33,7 +33,7 @@ const remove = {
     },
 
     removeRole(connection, init) {
-        connection.query("SELECT * FROM role", function (err, results) {
+        connection.query("SELECT * FROM roles", function (err, results) {
             if (err) throw err;
             inquirer
                 .prompt([
@@ -51,7 +51,7 @@ const remove = {
                     }
                 ])
                 .then(function (answer) {
-                    let query = 'DELETE FROM role WHERE title = ?;'
+                    let query = 'DELETE FROM roles WHERE title = ?;'
                     connection.query(query, answer.removeRole, function (err, res) {
                         if (err) throw err;
                         console.log("\n");

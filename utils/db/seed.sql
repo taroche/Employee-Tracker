@@ -1,3 +1,5 @@
+USE company_db;
+
 INSERT INTO department (name)
 VALUES 
 ("Executive"), 
@@ -14,7 +16,7 @@ SELECT * FROM department;
 
 
 
-INSERT INTO role (title, salary, department_id)
+INSERT INTO roles (title, salary, department_id)
 VALUES 
 ("Manager", 90000.00, 1),
 ("CEO", 180000.00, 1),
@@ -28,7 +30,7 @@ VALUES
 ("Quality Control Associate", 45000.00, 8),
 ("TEST", 10.00, 9);
 
-SELECT * FROM role;
+SELECT * FROM roles;
 
 INSERT INTO employee (first_name, last_name, role_id)
 VALUES 
@@ -45,7 +47,7 @@ VALUES
 ("Phone", "Thing", 8, 7),
 ("Tristan", "LaRoche", 9, 2),
 ("Molly", "Delan", 10, 2),
-("TEst", "TEst", 11, 1)
+("TEst", "TEst", 11, 1);
 
 
 SELECT * FROM employee;

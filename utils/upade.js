@@ -5,7 +5,7 @@ const update = {
 
         let newRole = {};
 
-        connection.query("SELECT employee.id, employee.first_name, employee.last_name, role.title, role.salary, department.name AS department, e2.first_name AS manager FROM employee LEFT JOIN employee AS e2 ON e2.id = employee.manager_id JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id ORDER BY employee.id", function (err, results) {
+        connection.query("SELECT employee.id, employee.first_name, employee.last_name, roles.title, roles.salary, department.dept_name AS department, e2.first_name AS manager FROM employee LEFT JOIN employee AS e2 ON e2.id = employee.manager_id JOIN roles ON employee.role_id = roles.id JOIN department ON roles.department_id = department.id ORDER BY employee.id", function (err, results) {
             if (err) throw err;
             inquirer
                 .prompt([
@@ -26,7 +26,7 @@ const update = {
 
                     newRole.first_name = answer.updateEmployee;
 
-                    connection.query("SELECT * FROM role", function (err, res) {
+                    connection.query("SELECT * FROM roles", function (err, res) {
                         if (err) throw err;
                         inquirer
                             .prompt([
@@ -44,7 +44,7 @@ const update = {
                                 }
                             ])
                             .then(function (answer) {
-                                connection.query("SELECT * FROM role WHERE title = ?", answer.updateRole, function (err, results) {
+                                connection.query("SELECT * FROM roles WHERE title = ?", answer.updateRole, function (err, results) {
                                     if (err) throw err;
 
                                     newRole.role_id = results[0].id;
@@ -68,7 +68,7 @@ const update = {
 
         let newManager = {};
 
-        connection.query("SELECT employee.id, employee.first_name, employee.last_name, role.title, role.salary, department.name AS department, e2.first_name AS manager FROM employee LEFT JOIN employee AS e2 ON e2.id = employee.manager_id JOIN role ON employee.role_id = role.id JOIN department ON role.department_id = department.id ORDER BY employee.id", function (err, results) {
+        connection.query("SELECT employee.id, employee.first_name, employee.last_name, roles.title, roles.salary, department.dept_name AS department, e2.first_name AS manager FROM employee LEFT JOIN employee AS e2 ON e2.id = employee.manager_id JOIN roles ON employee.role_id = roles.id JOIN department ON roles.department_id = department.id ORDER BY employee.id", function (err, results) {
             if (err) throw err;
             inquirer
                 .prompt([

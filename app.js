@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 
 const view = require("./utils/view.js");
 const add = require("./utils/add.js");
-const update = require("./utils/update.js");
+const update = require("./utils/upade.js");
 const remove = require("./utils/remove")
 
 const connection = mysql.createConnection({
