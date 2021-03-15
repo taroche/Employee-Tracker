@@ -7,7 +7,7 @@ const add = {
     addEmployee(connection, init){
 
     },
-    
+
     populateDepartments(connection) {
         departments = []
         departmentsId = []
@@ -25,8 +25,37 @@ const add = {
         })
     },
 
-    addRole(connection, init){
-        
+    addRole(connection, init) {
+        this.populateDepartments(connection)
+        inquirer.prompt([
+            {
+                name: "newTitle",
+                message: "What is the new role?"
+            },
+            {
+                name: "newSalary",
+                message: "What is the new role salary?"
+            },
+            {
+                type: "list",
+                name: "deptId",
+                choices: departments,
+                message: "What is the department is the new role in?"
+            },
+        ]).then(response => {
+            console.log(response)
+            console.log(departmentsId[departments.indexOf(response.deptId)])
+
+            let queryString = `
+            INSERT INTO roles (title, salary, department_id)
+            VALUES (?,?,?)`
+
+            connection.query(queryString, [response.newTitle, response.newSalary, departmentsId[departments.indexOf(response.deptId)]], (err, data) => {
+                if (err) throw err
+                console.log(data)
+                init()
+            })
+        })
     },
     
     addDepartment(connection, init) {
