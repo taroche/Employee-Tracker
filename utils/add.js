@@ -79,7 +79,9 @@ const add = {
     
                                         connection.query('INSERT INTO employee SET ?', newEmployee, function (err, results) {
                                             if (err) throw err;
+                                            console.log("\n")
                                             console.log("Employee successfully added.");
+                                            console.log("\n")
                                             init();
                                         })
                                     })
@@ -134,8 +136,10 @@ const add = {
 
             connection.query(queryString, [response.newTitle, response.newSalary, departmentsId[departments.indexOf(response.deptId)]], (err, data) => {
                 if (err) throw err
-                console.log(data)
-                init()
+                console.log("\n")
+                console.log("Role successfully added.");
+                console.log("\n")
+                init();
             })
         })
     },
@@ -153,8 +157,10 @@ const add = {
 
             connection.query(queryString, [response.newDept], (err, data) => {
                 if (err) throw err
-                console.log(data)
-                init()
+                console.log("\n")
+                console.log("Department successfully added.");
+                console.log("\n")
+                init();
             })
         })
     } 
