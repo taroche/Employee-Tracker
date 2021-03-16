@@ -24,7 +24,8 @@ const view = {
         LEFT JOIN roles
         ON role_id = roles.id
         LEFT JOIN department
-        ON department_id = department.id;`
+        ON department_id = department.id
+        ORDER BY dept_name ASC;`
 
         connection.query(queryString, (err, data) => {
             if (err) throw err;
