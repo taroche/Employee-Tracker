@@ -1,6 +1,6 @@
 USE company_db;
 
-INSERT INTO department (name)
+INSERT INTO department (dept_name)
 VALUES 
 ("Executive"), 
 ("Finance"), 
