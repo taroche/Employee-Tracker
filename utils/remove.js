@@ -74,7 +74,7 @@ const remove = {
                         choices: function () {
                             let choiceArray = [];
                             for (var i = 0; i < results.length; i++) {
-                                choiceArray.push(results[i].name);
+                                choiceArray.push(results[i].dept_name);
                             }
                             return choiceArray;
                         },
@@ -82,7 +82,7 @@ const remove = {
                     }
                 ])
                 .then(function (answer) {
-                    let query = 'DELETE FROM department WHERE name = ?;'
+                    let query = 'DELETE FROM department WHERE dept_name = ?;'
                     connection.query(query, answer.removeDept, function (err, res) {
                         if (err) throw err;
                         console.log("\n");
